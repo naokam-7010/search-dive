@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-emerald-50: #f1f6f6;
+  --color-emerald-100: #e2eded;
+  --color-emerald-200: #c5dbdb;
+  --color-emerald-300: #a8c9c9;
+  --color-emerald-400: #6ea5a5;
+  --color-emerald-500: #2F5F5D;
+  --color-emerald-600: #376B68;
+  --color-emerald-700: #2a5553;
+  --color-emerald-800: #214442;
+  --color-emerald-900: #1b3736;
+  --color-emerald-950: #102120;
+
+  --color-orange-50: #fff7ed;
+  --color-orange-100: #ffedd5;
+  --color-orange-200: #fed7aa;
+  --color-orange-300: #fdba74;
+  --color-orange-400: #fb923c;
+  --color-orange-500: #F5A623;
+  --color-orange-600: #F2A625;
+  --color-orange-700: #c2410c;
+  --color-orange-800: #9a3412;
+  --color-orange-900: #7c2d12;
+  --color-orange-950: #431407;
+
+  --color-blue-50: #f0f9ff;
+  --color-blue-100: #e0f2fe;
+  --color-blue-200: #bae6fd;
+  --color-blue-300: #7dd3fc;
+  --color-blue-400: #38bdf8;
+  --color-blue-500: #6BA5C8;
+  --color-blue-600: #5B9AC5;
+  --color-blue-700: #0369a1;
+  --color-blue-800: #075985;
+  --color-blue-900: #0c4a6e;
+  --color-blue-950: #082f49;
+
+  --color-zinc-50: #F5F5F5;
+  --color-zinc-100: #FAFAFA;
+  --color-zinc-200: #e5e5e5;
+  --color-zinc-300: #d4d4d4;
+  --color-zinc-400: #a3a3a3;
+  --color-zinc-500: #737373;
+  --color-zinc-600: #525252;
+  --color-zinc-700: #4A4A4A;
+  --color-zinc-800: #404040;
+  --color-zinc-900: #333333;
+  --color-zinc-950: #171717;
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-50 text-zinc-900 selection:bg-emerald-100 selection:text-emerald-900;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-300 rounded-full hover:bg-zinc-400 transition-colors;
+}
+
+/* Table Sticky Column Shadows */
+.sticky-shadow-right::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -1px;
+  bottom: 0;
+  width: 1px;
+  @apply bg-zinc-200;
+}
